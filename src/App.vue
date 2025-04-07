@@ -51,6 +51,19 @@ const reload = async () => {
   refModel.value.downloads = data.downloads
   refModel.value.countDown = config.intervalSeconds
 }
+
+// 全屏切换
+const toggleFullscreen = () => {
+  const elem = document.documentElement
+  if (!document.fullscreenElement) {
+    elem.requestFullscreen().catch((err) => {
+      console.error(`Error attempting to enable full-screen mode: ${err.message}`)
+    })
+  } else {
+    document.exitFullscreen()
+  }
+}
+
 onMounted(async () => {
   reload()
 })
@@ -97,6 +110,21 @@ onMounted(async () => {
       </div>
       <p>Next in {{ refModel.countDown }}</p>
     </div>
+    <div class="fullscreen" @click="toggleFullscreen">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill="currentColor"
+          d="M3 21v-5h2v3h3v2zm13 0v-2h3v-3h2v5zM3 8V3h5v2H5v3zm16 0V5h-3V3h5v5z"
+          stroke-width="0.5"
+          stroke="currentColor"
+        />
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -136,5 +164,10 @@ onMounted(async () => {
   right: 20px;
   text-align: left;
   font-size: 14px;
+}
+.fullscreen {
+  @include abs-transparent;
+  left: 0px;
+  bottom: 40px;
 }
 </style>
