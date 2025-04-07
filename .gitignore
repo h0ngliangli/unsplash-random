@@ -1,5 +1,7 @@
 # Logs
-.vscode/*
 .env
 src/config.js
+
+dist
 node_modules
+.vscode/*
