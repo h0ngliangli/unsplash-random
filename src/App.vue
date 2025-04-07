@@ -100,46 +100,41 @@ onMounted(async () => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@mixin abs-transparent {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  color: white;
+  font-family: "Courier New";
+  font-size: 20px;
+  margin: 5px;
+  position: absolute;
+  padding: 10px;
+}
+
 .wallpaper {
-  width: 100vw;
-  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
 }
 
 .title {
-  position: absolute;
-  top: 0;
+  @include abs-transparent;
   left: 0;
-  margin: 20px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  font-size: 16px;
-  font-family: "Courier New", Courier, monospace;
   text-align: center;
-  border-radius: 10px;
+  top: 0;
 }
 
 .desc {
-  /* position this to the bottom right */
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin-bottom: 40px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
+  @include abs-transparent;
+  bottom: 40px;
+  right: 20px;
   text-align: left;
-  border-radius: 10px;
-}
-
-.desc p {
   font-size: 14px;
-  margin: 0;
 }
 </style>
