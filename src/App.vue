@@ -62,17 +62,35 @@ onMounted(async () => {
       class="wallpaper"
       :style="{ backgroundImage: 'url(' + refModel.url + ')' }"
     ></div>
+    <div class="title">
+      <h1>{{ refModel.description }}</h1>
+    </div>
     <!-- <img :src="refModel.url" class="wallpaper" /> -->
     <div class="desc">
       <div v-if="refModel.errorCode === 0">
-        <h1>{{ refModel.description }}</h1>
-        <p>
-          By <img :src="refModel.userprofileUrl" width="16px" />
-          {{ refModel.username }}
-        </p>
-        <p>Likes: {{ refModel.likes }}</p>
-        <p>Views: {{ refModel.views }}</p>
-        <p>Downloads: {{ refModel.downloads }}</p>
+        <div class="flex flex-row align-items-center gap-1">
+          <img :src="refModel.userprofileUrl" width="24px" />
+          <p>
+            {{ refModel.username }}
+          </p>
+        </div>
+        <div class="flex flex-row align-items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              fill="currentColor"
+              fill-rule="evenodd"
+              d="M4.536 5.778a5 5 0 0 1 7.07 0q.275.274.708.682q.432-.408.707-.682a5 5 0 0 1 7.125 7.016L13.02 19.92a1 1 0 0 1-1.414 0L4.48 12.795a5 5 0 0 1 .055-7.017z"
+              stroke-width="0.5"
+              stroke="currentColor"
+            />
+          </svg>
+          <p>{{ refModel.likes }}</p>
+        </div>
       </div>
       <div v-else>
         <p>Error: {{ refModel.errorCode }} {{ refModel.errorMessage }}</p>
@@ -91,22 +109,32 @@ onMounted(async () => {
   background-position: center;
 }
 .desc {
-  /* position this to the top left */
+  /* position this to the bottom right */
   position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 20%;
+  bottom: 0;
+  right: 0;
+  margin: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
   font-size: 20px;
   font-family: "Courier New", Courier, monospace;
   text-align: left;
+  border-radius: 10px;
 }
-.desc h1 {
-  font-size: 20px;
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: left;
+  border-radius: 10px;
 }
-
 .desc p {
   font-size: 14px;
   margin: 0;
