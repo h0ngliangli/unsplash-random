@@ -63,7 +63,7 @@ onMounted(async () => {
       :style="{ backgroundImage: 'url(' + refModel.url + ')' }"
     ></div>
     <div class="title">
-      <h1>{{ refModel.description }}</h1>
+      {{ refModel.description }}
     </div>
     <!-- <img :src="refModel.url" class="wallpaper" /> -->
     <div class="desc">
@@ -130,9 +130,9 @@ onMounted(async () => {
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   padding: 10px;
-  font-size: 24px;
+  font-size: 16px;
   font-family: "Courier New", Courier, monospace;
-  text-align: left;
+  text-align: center;
   border-radius: 10px;
 }
 .desc p {
