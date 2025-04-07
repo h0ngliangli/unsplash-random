@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      dotenv:
-        specifier: ^16.4.7
-        version: 16.4.7
       vue:
         specifier: ^3.5.13
         version: 3.5.13
@@ -571,10 +568,6 @@ packages:
 
   define-lazy-prop@3.0.0:
     resolution: {integrity: sha512-N+MeXYoqr3pOgn8xfyRPREN7gHakLYjhsHhWGT3fWAiL4IkAt0iDw14QiiEm2bE30c5XX5q0FtAA3CK5f9/BUg==}
-    engines: {node: '>=12'}
-
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
 
   electron-to-chromium@1.5.132:
@@ -1433,8 +1426,6 @@ snapshots:
       default-browser-id: 5.0.0
 
   define-lazy-prop@3.0.0: {}
-
-  dotenv@16.4.7: {}
 
   electron-to-chromium@1.5.132: {}
 
