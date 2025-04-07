@@ -108,20 +108,7 @@ onMounted(async () => {
   background-repeat: no-repeat;
   background-position: center;
 }
-.desc {
-  /* position this to the bottom right */
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin: 20px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  font-size: 20px;
-  font-family: "Courier New", Courier, monospace;
-  text-align: left;
-  border-radius: 10px;
-}
+
 .title {
   position: absolute;
   top: 0;
@@ -135,6 +122,22 @@ onMounted(async () => {
   text-align: center;
   border-radius: 10px;
 }
+
+.desc {
+  /* position this to the bottom right */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 40px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  text-align: left;
+  border-radius: 10px;
+}
+
 .desc p {
   font-size: 14px;
   margin: 0;
