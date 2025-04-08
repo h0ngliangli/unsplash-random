@@ -57,7 +57,9 @@ const toggleFullscreen = () => {
   const elem = document.documentElement
   if (!document.fullscreenElement) {
     elem.requestFullscreen().catch((err) => {
-      console.error(`Error attempting to enable full-screen mode: ${err.message}`)
+      console.error(
+        `Error attempting to enable full-screen mode: ${err.message}`
+      )
     })
   } else {
     document.exitFullscreen()
@@ -152,10 +154,13 @@ onMounted(async () => {
 }
 
 .title {
+  /* 居中显示 */
   @include abs-transparent;
-  left: 0;
+  left: 50%;
+  max-width: 50%;
   text-align: center;
-  top: 0;
+  top: 0px;
+  transform: translateX(-50%);
 }
 
 .desc {
